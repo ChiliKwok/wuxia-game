@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>七曜：逆鳞之争</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              ink: '#1a1a1a',
+              paper: '#f0e6d2',
+              crimson: '#8a1c1c',
+              gold: '#c5a059',
+              jade: '#4a7c59',
+              stone: '#2c2c2c',
+            },
+            fontFamily: {
+              serif: ['"Noto Serif SC"', 'SimSun', 'serif'],
+              sans: ['system-ui', 'sans-serif'],
+            },
+            animation: {
+              'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'float': 'float 6s ease-in-out infinite',
+              'fade-in-up': 'fadeInUp 0.5s ease-out forwards',
+              'slide-in-right': 'slideInRight 0.3s ease-out forwards',
+              'cloud-drift': 'cloudDrift 60s linear infinite',
+              'cloud-drift-slow': 'cloudDrift 120s linear infinite',
+            },
+            keyframes: {
+              float: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-10px)' },
+              },
+              fadeInUp: {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              slideInRight: {
+                '0%': { transform: 'translateX(100%)' },
+                '100%': { transform: 'translateX(0)' },
+              },
+              cloudDrift: {
+                '0%': { backgroundPosition: '0% 0%' },
+                '100%': { backgroundPosition: '100% 0%' },
+              }
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&display=swap');
+      
+      body {
+        background-color: #0c0a09; /* stone-950 */
+        color: #f0e6d2;
+        font-family: 'Noto Serif SC', serif;
+        overflow: hidden; 
+      }
+      
+      .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+      }
+      .scrollbar-hide {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+      }
+      
+      .writing-vertical-rl {
+        writing-mode: vertical-rl;
+        text-orientation: upright;
+      }
+
+      /* 3D Utilities */
+      .perspective-container {
+        perspective: 1200px;
+      }
+      .preserve-3d {
+        transform-style: preserve-3d;
+      }
+      .translate-z-5 { transform: translateZ(5px); }
+      .translate-z-10 { transform: translateZ(10px); }
+      .translate-z-20 { transform: translateZ(20px); }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
